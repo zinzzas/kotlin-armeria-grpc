@@ -1,0 +1,53 @@
+[
+  {
+    "purchaseNo": "201907010001",
+    "customerId": "user0001",
+    "customerName": "진짜",
+    "productId": 999999999,
+    "productName": "macbook pro 2019",
+    "price": 105000,
+    "quantity": 5,
+    "purchaseDate": "2019-07-01T00:00:00.000Z"
+  },
+  {
+    "purchaseNo": "201907010002",
+    "customerId": "user0001",
+    "customerName": "진짜",
+    "productId": 999999998,
+    "productName": "macbook 2018",
+    "price": 105000,
+    "quantity": 1,
+    "purchaseDate": "2019-07-01T00:00:00.000Z"
+  },
+  {
+    "purchaseNo": "201907010005",
+    "customerId": "user0001",
+    "customerName": "진짜",
+    "productId": 999999998,
+    "productName": "macbook air 2015",
+    "price": 105000,
+    "quantity": 1,
+    "purchaseDate": "2019-07-01T00:00:00.000Z"
+  },
+  {
+    "purchaseNo": "201907010006",
+    "customerId": "user0001",
+    "customerName": "진짜",
+    "productId": 66666666,
+    "productName": "samsung book pro 2017",
+    "price": 505000,
+    "quantity": 1,
+    "purchaseDate": "2019-07-01T00:00:00.000Z"
+  },
+  {
+    "purchaseNo": "201907010007",
+    "customerId": "user0001",
+    "customerName": "진짜",
+    "productId": 929999998,
+    "productName": "macbook pro 2023",
+    "price": 2050000,
+    "quantity": 1,
+    "purchaseDate": "2019-07-01T00:00:00.000Z"
+  }
+]
+

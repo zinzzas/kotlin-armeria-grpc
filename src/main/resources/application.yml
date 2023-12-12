@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: local
+
+armeria:
+  ports:
+    - port: 2222
+      protocols:
+        - HTTP
+  graceful-shutdown:
+    quiet-period-millis: 2000
+    timeout-millis: 3000
+  request-timeout: 3000  #ms
+  maxNumConnections: 500 #bytes (default: 1000)
+  internal-services:
+    port: 2223
+    include : metrics, docs, health
+    enable-metrics: true
+    metrics-path: '/internal'
+    health-check-path: '/internal/health'
+    docs-path: '/internal/docs'
+    prometheus:
+      enabled: true
+      path: '/internal/prometheus'
+
+global:
+  region-code: KR, US
+  language-code: ko,en
+  time-zone:
+    KR: "Asia/Seoul"
+    US: "US/Hawaii"

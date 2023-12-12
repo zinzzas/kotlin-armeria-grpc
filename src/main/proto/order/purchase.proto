@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package com.armeria.purchase.v1;
+
+import "google/protobuf/empty.proto";
+
+message CreatePurchaseRequest {
+  Purchase purchase = 1;
+}
+
+message GetPurchaseRequest {
+  string purchase_no = 1;
+  string customer_id = 2;
+  string purchase_date = 3;
+}
+
+message GetPurchaseResponse {
+  Purchase purchase = 1;
+}
+
+message ListPurchasesRequest {
+  string purchase_no = 1;
+  string customer_id = 2;
+  string purchase_date = 3;
+}
+
+message ListPurchasesResponse {
+  repeated Purchase purchases = 1;
+  string has_next = 2;
+}
+
+message DeletePurchaseRequest {
+  string purchase_no = 1;
+  string customer_id = 2;
+  string purchase_date = 3;
+}
+
+message Purchase {
+  string purchase_no = 1;
+  string customer_id = 2;
+  string customer_name = 3;
+  int64 product_id = 4;
+  string product_name = 5;
+  int32 price = 6;
+  int32 quantity = 7;
+  string purchase_date = 8;
+}
+
+service PurchaseService {
+  rpc CreatePurchase(CreatePurchaseRequest) returns (google.protobuf.Empty) {}
+  rpc GetPurchase(GetPurchaseRequest) returns (GetPurchaseResponse) {}
+  rpc ListPurchases(ListPurchasesRequest) returns (ListPurchasesResponse) {}
+  rpc DeletePurchase(DeletePurchaseRequest) returns (google.protobuf.Empty) {}
+}
