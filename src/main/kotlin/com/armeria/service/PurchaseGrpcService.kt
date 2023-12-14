@@ -6,13 +6,17 @@ import com.armeria.dto.PurchaseResponse
 import com.armeria.purchase.v1.PurchaseOuterClass
 import com.armeria.purchase.v1.PurchaseOuterClass.ListPurchasesResponse
 import com.armeria.purchase.v1.PurchaseServiceGrpcKt
+import com.armeria.support.decorator.datadog.DatadogTracerService
 import com.google.protobuf.Empty
 import com.linecorp.armeria.server.grpc.GrpcExceptionHandler
-import com.armeria.support.error.GlobalGrpcExceptionHandler
+import com.armeria.support.decorator.error.GlobalGrpcExceptionHandler
+import com.linecorp.armeria.server.annotation.Decorator
+import com.linecorp.armeria.server.annotation.Decorators
 import org.springframework.stereotype.Service
 
 
 @Service
+@Decorator(DatadogTracerService::class)
 @GrpcExceptionHandler(GlobalGrpcExceptionHandler::class)
 class PurchaseGrpcService(private val purchaseComponent: PurchaseComponent): PurchaseServiceGrpcKt.PurchaseServiceCoroutineImplBase() {
 

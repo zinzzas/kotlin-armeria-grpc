@@ -52,6 +52,10 @@ dependencies {
     implementation("io.grpc:grpc-kotlin-stub:${Version.grpcKotlin}")
     implementation("com.google.protobuf:protobuf-kotlin:${Version.protoc}")
 
+    // datadog tracer
+    implementation("com.datadoghq:dd-trace-api:1.21.0")
+    implementation("io.opentracing:opentracing-api:0.33.0")
+    implementation("io.opentracing:opentracing-util:0.33.0")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
